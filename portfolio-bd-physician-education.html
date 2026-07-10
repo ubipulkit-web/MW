@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr Pulkit Mandal — Medical Writing Portfolio, Physician Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1F4F6;
+    --card:#FFFFFF;
+    --ink:#16263A;
+    --ink-soft:#4A5C6E;
+    --grid:#D3DEE5;
+    --rule:#C2D0D9;
+    --trace:#0E7C86;
+    --mark:#9C5A08;
+    --serif:"IBM Plex Serif",Georgia,serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:28px 28px;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--trace)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--mark);outline-offset:3px}
+
+  .shell{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 42px;position:relative}
+  .kicker{
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-soft);margin:0 0 20px;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.06;letter-spacing:-.02em;
+    margin:0 0 18px;max-width:19ch;
+  }
+  .hero .lede{font-size:clamp(1rem,1.6vw,1.18rem);color:var(--ink-soft);max-width:62ch;margin:0 0 26px}
+  .hero .who{font-family:var(--mono);font-size:12.5px;color:var(--ink);letter-spacing:.02em}
+  .hero .who span{color:var(--ink-soft)}
+
+  .trace{display:block;width:100%;height:74px;margin:30px 0 0;overflow:visible}
+  .trace path{fill:none;stroke:var(--trace);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .trace .ghost{stroke:var(--rule);stroke-width:1}
+  .trace .live{stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.4s cubic-bezier(.6,.05,.2,1) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){
+    .trace .live{animation:none;stroke-dashoffset:0}
+    html{scroll-behavior:auto}
+  }
+
+  .note{
+    margin:34px 0 0;padding:14px 18px;border-left:3px solid var(--mark);
+    background:rgba(156,90,8,.05);
+    font-size:13.5px;color:var(--ink-soft);max-width:76ch;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .layout{display:grid;grid-template-columns:212px 1fr;gap:56px;padding:56px 0 90px;align-items:start}
+  @media (max-width:900px){.layout{grid-template-columns:1fr;gap:0;padding-top:30px}}
+
+  .rail{position:sticky;top:26px;font-family:var(--mono);font-size:11.5px;line-height:1.9}
+  @media (max-width:900px){.rail{position:static;margin-bottom:44px}}
+  .rail p{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  .rail ol{list-style:none;margin:0;padding:0;counter-reset:r}
+  .rail li{counter-increment:r;display:flex;gap:9px}
+  .rail li::before{content:counter(r,decimal-leading-zero);color:var(--rule);flex:none}
+  .rail a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent}
+  .rail a:hover{color:var(--trace);border-bottom-color:var(--trace)}
+
+  /* ---------- SECTIONS ---------- */
+  .sec{
+    background:var(--card);border:1px solid var(--rule);
+    padding:34px 36px;margin:0 0 22px;scroll-margin-top:24px;
+  }
+  @media (max-width:600px){.sec{padding:26px 22px}}
+  .tag{
+    display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--trace);border:1px solid var(--trace);
+    padding:3px 9px;margin-bottom:16px;
+  }
+  .sec h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(1.3rem,2.4vw,1.72rem);
+    line-height:1.18;letter-spacing:-.01em;margin:0 0 10px;
+  }
+  .purpose{font-size:14px;color:var(--ink-soft);margin:0 0 22px;max-width:70ch}
+  .purpose strong{color:var(--ink);font-weight:600}
+
+  .sec h3{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-soft);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+  }
+  .sec p{margin:0 0 13px;max-width:74ch}
+  .sec ul{margin:0 0 13px;padding-left:18px;max-width:74ch}
+  .sec li{margin-bottom:6px}
+
+  .sample{
+    background:#FAFCFD;border:1px solid var(--rule);border-left:3px solid var(--trace);
+    padding:20px 22px;margin:14px 0 4px;
+  }
+  .sample p:last-child,.sample ul:last-child{margin-bottom:0}
+  .sample .label{
+    font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-soft);display:block;margin-bottom:10px;
+  }
+
+  .slide{
+    border:1px solid var(--rule);background:var(--card);padding:16px 18px;margin-bottom:10px;
+  }
+  .slide .n{font-family:var(--mono);font-size:10.5px;color:var(--trace);letter-spacing:.1em}
+  .slide h4{font-family:var(--sans);font-weight:600;font-size:15px;margin:5px 0 6px}
+  .slide p{font-size:13.5px;color:var(--ink-soft);margin:0}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin:12px 0}
+  th,td{border:1px solid var(--rule);padding:9px 11px;text-align:left;vertical-align:top}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;background:#F6F9FA}
+
+  code{font-family:var(--mono);font-size:13px;background:#F0F4F6;padding:1px 5px;border:1px solid var(--rule)}
+  .search{font-family:var(--mono);font-size:12.5px;line-height:1.85;white-space:pre-wrap;word-break:break-word}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media (max-width:700px){.cols{grid-template-columns:1fr}}
+
+  .check{list-style:none;padding:0}
+  .check li{padding-left:26px;position:relative}
+  .check li::before{
+    content:"";position:absolute;left:0;top:.55em;width:11px;height:11px;
+    border:1.5px solid var(--trace);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--rule);padding:40px 0 70px;font-size:14px;color:var(--ink-soft)}
+  footer .name{font-family:var(--serif);font-size:20px;color:var(--ink);font-weight:600;margin:0 0 8px}
+  footer a{color:var(--trace)}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <header class="hero">
+    <p class="kicker">Medical writing portfolio · Physician education · EMEA</p>
+    <h1>Turning clinical evidence into education physicians can teach from.</h1>
+    <p class="lede">A portfolio of sample deliverables built around a single clinical thread — vascular access failure in the critically ill — showing how one body of evidence becomes a slide deck, a facilitator guide, a data story, an abstract, and a reference library.</p>
+    <p class="who">Dr Pulkit Mandal · MD, GMC-recognised · MSc Sports &amp; Exercise Medicine <span>· Manchester, UK</span></p>
+
+    <svg class="trace" viewBox="0 0 1200 74" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="ghost" d="M0,37 L1200,37"/>
+      <path class="live" d="M0,37 L150,37 L168,37 L176,28 L184,46 L192,10 L200,62 L208,32 L216,37 L400,37 L418,37 L426,28 L434,46 L442,10 L450,62 L458,32 L466,37 L650,37 L668,37 L676,28 L684,46 L692,10 L700,62 L708,32 L716,37 L900,37 L918,37 L926,28 L934,46 L942,10 L950,62 L958,32 L966,37 L1200,37"/>
+    </svg>
+
+    <p class="note"><strong>About these samples.</strong> Every piece below is original demonstration writing, produced for this portfolio to show method and craft. None of it is client work, and none of it is associated with or endorsed by any device manufacturer. Where figures appear they are illustrative and marked as such; in live work every number is checked against its source.</p>
+  </header>
+
+  <div class="layout">
+    <nav class="rail" aria-label="Portfolio contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#s1">Positioning</a></li>
+        <li><a href="#s2">Editorial method</a></li>
+        <li><a href="#s3">Education deck</a></li>
+        <li><a href="#s4">Speaker notes</a></li>
+        <li><a href="#s5">Train-the-Trainer</a></li>
+        <li><a href="#s6">Faculty brief</a></li>
+        <li><a href="#s7">Data storytelling</a></li>
+        <li><a href="#s8">Evidence summary</a></li>
+        <li><a href="#s9">Search strategy</a></li>
+        <li><a href="#s10">Critical appraisal</a></li>
+        <li><a href="#s11">Data viz brief</a></li>
+        <li><a href="#s12">Plain language</a></li>
+        <li><a href="#s13">Abstract &amp; poster</a></li>
+        <li><a href="#s14">Medical review</a></li>
+        <li><a href="#s15">Reference library</a></li>
+        <li><a href="#s16">Record</a></li>
+      </ol>
+    </nav>
+
+    <main>
+
+      <!-- 1 -->
+      <section class="sec" id="s1">
+        <span class="tag">Positioning</span>
+        <h2>A clinician who writes, not a writer who reads about clinicians</h2>
+        <p class="purpose">Why the clinical training matters to the education, and what I bring to a medical affairs team.</p>
+        <p>I qualified in medicine, rotated through more than twelve specialties, and spent two years writing educational content and assessment material for a medical education platform. That combination shapes how I write: I know what a physician does with a slide once they leave the room, and I know how quickly an audience disengages from a deck that explains the evidence without explaining the decision.</p>
+        <p>The work in this portfolio is built on one clinical question — why peripheral intravenous catheters fail in critically ill patients, and what the evidence says about it — deliberately followed through every deliverable a medical affairs team would need. The point is not the topic. The point is watching a single evidence base survive translation into eight different formats without losing accuracy at any step.</p>
+        <h3>What I do</h3>
+        <ul>
+          <li>Turn primary literature into teaching material that holds up to a specialist audience.</li>
+          <li>Build the narrative spine before the slides, so the deck argues something rather than listing findings.</li>
+          <li>Write for the trainer as well as the trainee, so content travels into local markets intact.</li>
+          <li>Check every claim against source, and keep the source where the next writer can find it.</li>
+        </ul>
+      </section>
+
+      <!-- 2 -->
+      <section class="sec" id="s2">
+        <span class="tag">Editorial method</span>
+        <h2>How a paper becomes a slide</h2>
+        <p class="purpose">The working process behind every sample on this page — <strong>and the point in it where most educational content goes wrong.</strong></p>
+        <table>
+          <thead><tr><th>Stage</th><th>What happens</th><th>What I am guarding against</th></tr></thead>
+          <tbody>
+            <tr><td>Scope</td><td>Agree the audience, the single decision the content should inform, and what success looks like.</td><td>Content that teaches a topic instead of changing a practice.</td></tr>
+            <tr><td>Retrieve</td><td>Structured search, defined inclusion criteria, full-text screening, reference library built at this stage rather than after.</td><td>Citing the review instead of the study.</td></tr>
+            <tr><td>Appraise</td><td>Study design, population, comparator, effect size, confidence interval, risk of bias. Judgement recorded, not just the result.</td><td>A striking number from a weak study.</td></tr>
+            <tr><td>Narrate</td><td>Write the argument as prose first. If it cannot be said in a paragraph, it cannot be taught in a deck.</td><td>Slides assembled from findings, with no thesis.</td></tr>
+            <tr><td>Build</td><td>Slides, notes, facilitator guide, handout. One message per slide, one job per element.</td><td>The slide that carries the speaker's script.</td></tr>
+            <tr><td>Verify</td><td>Line-by-line data check against source. Every figure traced back. Reference list reconciled.</td><td>Drift introduced during revision.</td></tr>
+            <tr><td>Review</td><td>Medical, scientific and compliance review; revisions incorporated; sign-off recorded with an audit trail.</td><td>An approved deck that no longer matches the approved evidence.</td></tr>
+          </tbody>
+        </table>
+        <div class="sample">
+          <span class="label">The failure point</span>
+          <p>Most educational content breaks at <em>Narrate</em>. A writer who has retrieved and appraised well will still produce an inert deck if they move straight to slides, because slides reward completeness and an argument requires selection. Writing the prose paragraph first forces the omissions to happen early, where they can be defended, rather than late, where they happen by running out of room.</p>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="sec" id="s3">
+        <span class="tag">Deliverable · Educational slide deck</span>
+        <h2>Vascular access failure in the critically ill</h2>
+        <p class="purpose">A 40-minute deck for intensivists and anaesthetists. Sample structure and slide-level treatment — <strong>one message per slide, stated as a claim, not a heading.</strong></p>
+
+        <h3>Narrative spine, written before any slide</h3>
+        <div class="sample">
+          <span class="label">Thesis paragraph</span>
+          <p>Peripheral intravenous catheters are the most commonly used invasive device in hospital medicine and the least examined. A substantial proportion fail before the end of the intended dwell, and in the critically ill the consequences of that failure are not merely inconvenience: they are interrupted therapy, repeated cannulation, escalation to central access, and avoidable infection risk. The evidence suggests failure is not random. It clusters around insertion technique, device selection relative to vein calibre, securement, and the assumption that a working line will keep working. Each of those is modifiable. This session argues that PIVC failure should be treated as a measurable, preventable clinical outcome rather than an accepted background rate.</p>
+        </div>
+
+        <h3>Slide sequence, abridged</h3>
+        <div class="slide"><span class="n">01</span><h4>The device we stopped looking at</h4><p>Open on frequency, not failure. Establishes the scale of the exposure before the problem is named.</p></div>
+        <div class="slide"><span class="n">02</span><h4>Failure is common enough to be expected, and treated as if it weren't</h4><p>Reported failure rates, with study heterogeneity shown honestly rather than averaged into a single figure.</p></div>
+        <div class="slide"><span class="n">03</span><h4>What "failure" actually means at the bedside</h4><p>Definitional slide. Phlebitis, infiltration, occlusion, dislodgement — separated, because they have different causes and different fixes.</p></div>
+        <div class="slide"><span class="n">04</span><h4>The critically ill patient is not the average patient</h4><p>Vasopressors, oedema, repeated sampling, prolonged dwell. Why generalising from ward data understates the problem.</p></div>
+        <div class="slide"><span class="n">05</span><h4>Four modifiable factors, ranked by evidence strength</h4><p>The argumentative centre of the deck. Ranking is stated as a judgement and the basis is shown.</p></div>
+        <div class="slide"><span class="n">06</span><h4>Catheter-to-vein ratio: the measurement most units don't make</h4><p>Single-concept slide. One diagram, one number, no bullet list.</p></div>
+        <div class="slide"><span class="n">07</span><h4>What the evidence does not yet tell us</h4><p>Placed before the recommendations, not after. Credibility is built by naming the gaps first.</p></div>
+        <div class="slide"><span class="n">08</span><h4>Three things to change on Monday</h4><p>Closes on the decision, not the summary.</p></div>
+
+        <div class="sample">
+          <span class="label">Design rule applied throughout</span>
+          <p>Every slide title is a sentence that can be true or false. A title like <em>"Catheter-to-vein ratio"</em> tells the audience the subject; a title like <em>"Catheter-to-vein ratio: the measurement most units don't make"</em> tells them the claim, and the body of the slide then has something to earn.</p>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="sec" id="s4">
+        <span class="tag">Deliverable · Speaker notes</span>
+        <h2>Notes written for the person standing up, not the person who wrote the deck</h2>
+        <p class="purpose">Sample speaker notes for slide 05. Written so a physician who did not build the deck can deliver it with authority.</p>
+        <div class="sample">
+          <span class="label">Slide 05 — Four modifiable factors, ranked by evidence strength</span>
+          <p><strong>Time:</strong> 6 minutes. <strong>Your job on this slide:</strong> move the room from "failure happens" to "failure is caused."</p>
+          <p><strong>Say:</strong> Walk the four factors in order. Do not read the ranking — explain why the ranking is what it is. The ranking rests on trial design, not on effect size alone, and the audience will test you on that.</p>
+          <p><strong>Expect to be asked:</strong> "Isn't securement just a proxy for nursing workload?" This is a fair challenge and the honest answer is that the observational data cannot fully separate the two. Concede it. The argument does not depend on winning that point.</p>
+          <p><strong>Do not say:</strong> that any single factor is the cause. The evidence supports a cluster, and overstating it here will cost you the room for the rest of the session.</p>
+          <p><strong>If you are running short:</strong> cut factor four and keep the gaps slide. The gaps slide is doing more work than it looks like it is.</p>
+        </div>
+        <p>Speaker notes are the deliverable most often treated as an afterthought, and the one that decides whether content survives its second delivery. A note that only restates the slide is a note that assumes the original author will always present.</p>
+      </section>
+
+      <!-- 5 -->
+      <section class="sec" id="s5">
+        <span class="tag">Deliverable · Train-the-Trainer</span>
+        <h2>Facilitator guide: preparing a physician to teach this</h2>
+        <p class="purpose">Extract from a Train-the-Trainer pack, designed so faculty in local markets can deliver consistent content in their own clinical idiom.</p>
+
+        <h3>Session architecture</h3>
+        <table>
+          <thead><tr><th>Segment</th><th>Duration</th><th>Facilitator mode</th></tr></thead>
+          <tbody>
+            <tr><td>Case cold open</td><td>5 min</td><td>Present, do not interpret. Let the room reach the problem.</td></tr>
+            <tr><td>Evidence walk</td><td>15 min</td><td>Didactic. This is the only segment where you hold the floor.</td></tr>
+            <tr><td>Ranking exercise</td><td>10 min</td><td>Small groups rank the four factors before you show your ranking.</td></tr>
+            <tr><td>Reconciliation</td><td>7 min</td><td>Compare. Disagreement here is the teaching, not an obstacle to it.</td></tr>
+            <tr><td>Local adaptation</td><td>3 min</td><td>Ask what changes in <em>their</em> unit. Do not answer for them.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Faculty preparation checklist</h3>
+        <ul class="check">
+          <li>Read the four source papers, not the deck. You will be asked something the deck does not contain.</li>
+          <li>Know one limitation of each study well enough to raise it before the audience does.</li>
+          <li>Identify one local practice that contradicts the evidence, and be prepared to name it without blame.</li>
+          <li>Rehearse the ranking exercise reconciliation. It is the only unscripted segment.</li>
+          <li>Confirm which claims are approved for your market and which are not.</li>
+        </ul>
+
+        <div class="sample">
+          <span class="label">Guidance to faculty on tone</span>
+          <p>You are not persuading this room that a problem exists — most of them have re-sited a failed cannula this week. You are giving them permission to treat it as a measurable outcome rather than an accepted cost of care. That shift is the entire session. If they leave agreeing with the data but still describing failure as inevitable, the session did not work.</p>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="sec" id="s6">
+        <span class="tag">Deliverable · Faculty briefing</span>
+        <h2>Briefing document for an external expert</h2>
+        <p class="purpose">What a KOL receives before agreeing to chair or present — scope, evidence position, and the boundaries of the claim.</p>
+        <div class="sample">
+          <span class="label">Extract — evidence position and boundaries</span>
+          <p><strong>What the evidence supports.</strong> That PIVC failure rates in critical care are substantial, that failure is associated with identifiable insertion and maintenance factors, and that structured insertion practice is associated with lower failure in prospective cohorts.</p>
+          <p><strong>What the evidence does not support.</strong> A causal claim for any single intervention in isolation. A quantified number-needed-to-treat. Any comparative claim between named commercial devices, which falls outside the scope of this programme entirely and outside my remit as writer.</p>
+          <p><strong>Where you will meet resistance.</strong> Colleagues who read the observational literature as confounded by nursing ratios. This is a legitimate reading. The briefing recommends conceding the point rather than defending it, because the educational objective does not require it.</p>
+          <p><strong>Your independence.</strong> Content is yours to challenge. If you disagree with the ranking on slide 05, say so from the platform. A faculty member who visibly disagrees with one slide is worth more to the credibility of the programme than one who agrees with all of them.</p>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="sec" id="s7">
+        <span class="tag">Deliverable · Data storytelling</span>
+        <h2>Building an evidence-based narrative from a scatter of findings</h2>
+        <p class="purpose">The same four studies, told two ways. <strong>Only one of them is education.</strong></p>
+        <div class="cols">
+          <div class="sample">
+            <span class="label">Findings, listed</span>
+            <p>Study A reported a failure rate at the upper end of the published range. Study B found an association between catheter gauge and phlebitis. Study C found no benefit from routine replacement. Study D reported improved dwell following a structured insertion bundle.</p>
+            <p>Four true sentences. No argument. An audience cannot act on this, and will not remember it by Thursday.</p>
+          </div>
+          <div class="sample">
+            <span class="label">Findings, narrated</span>
+            <p>If failure were random, replacing catheters on a schedule would help. Study C says it does not. If failure were random, the device chosen would not matter. Study B says it does. What Study D then shows is the shape of the answer: change what happens at insertion, and the line lasts longer. Study A tells us why this is worth the trouble — the failure rate is not a rounding error, it is most of a shift's work.</p>
+            <p>Same four studies. Now they are a claim, and the claim can be argued with, which is what makes it teachable.</p>
+          </div>
+        </div>
+        <p>Data storytelling is often taken to mean the visual presentation of numbers. It is closer to the opposite: deciding what the numbers are <em>for</em>, and accepting that a finding which does not serve the argument belongs in the appendix, not the deck.</p>
+      </section>
+
+      <!-- 8 -->
+      <section class="sec" id="s8">
+        <span class="tag">Deliverable · Clinical evidence summary</span>
+        <h2>One page, for a physician with four minutes</h2>
+        <p class="purpose">The format that gets read. Structured so the reader can stop after any paragraph and still have something usable.</p>
+        <div class="sample">
+          <span class="label">Evidence summary — PIVC failure in critical care</span>
+          <p><strong>Bottom line.</strong> A large minority of peripheral intravenous catheters fail before intended removal. In critically ill patients the reported burden is higher and the downstream cost — interrupted therapy, escalation to central access — is greater. Failure is associated with modifiable factors.</p>
+          <p><strong>What is well established.</strong> Failure is common across settings. Phlebitis, infiltration, occlusion and dislodgement are distinct mechanisms with distinct antecedents. Routine time-based replacement has not demonstrated benefit over clinically indicated replacement in the trial evidence.</p>
+          <p><strong>What is probable.</strong> Device calibre relative to vein diameter, insertion technique, and securement quality each contribute. Effect estimates vary by setting and by how failure is defined.</p>
+          <p><strong>What is uncertain.</strong> The independent contribution of each factor, and whether observational associations survive adjustment for nursing workload and case-mix.</p>
+          <p><strong>What this means for practice.</strong> Treat failure as an outcome to be measured. Where a unit does not know its own failure rate, that is the first intervention.</p>
+          <p><strong>Confidence.</strong> Moderate for the established claims, low to moderate for the probable ones. Graded on study design and consistency; the grading rationale is available with the reference set.</p>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="sec" id="s9">
+        <span class="tag">Deliverable · Search strategy</span>
+        <h2>Retrieval, written so it can be repeated by someone else</h2>
+        <p class="purpose">A search is a method, not an act. Sample strategy in the structure I use for registered reviews.</p>
+        <h3>MEDLINE via Ovid — sample strategy</h3>
+        <div class="sample search">1  exp Catheterization, Peripheral/
+2  (peripheral adj2 (catheter* or cannula* or line*)).ti,ab,kw.
+3  (PIVC or PVC or "peripheral intravenous").ti,ab,kw.
+4  1 or 2 or 3
+5  exp Critical Illness/ or exp Intensive Care Units/
+6  (critical* ill* or ICU or "intensive care" or anaesthe* or anesthe*).ti,ab,kw.
+7  5 or 6
+8  (fail* or complicat* or phlebitis or infiltrat* or extravasat* or occlus* or dislodge*).ti,ab,kw.
+9  4 and 7 and 8
+10 limit 9 to (english language and humans)</div>
+        <h3>Method notes</h3>
+        <ul>
+          <li>Controlled vocabulary and free text run in parallel, then combined — neither alone retrieves the full set.</li>
+          <li>Truncation is deliberate and tested: <code>complicat*</code> retrieves the noun and adjective forms; <code>occlus*</code> retrieves occlusion and occlusive.</li>
+          <li>Adjacency (<code>adj2</code>) rather than AND inside line 2, because "peripheral" and "catheter" co-occurring in an abstract about central lines is a false positive.</li>
+          <li>Strategy translated line by line for Embase (Emtree), CINAHL (CINAHL Headings) and Cochrane CENTRAL; syntax differs, logic does not.</li>
+          <li>Peer reviewed against a checklist before running, and the number retrieved at each line recorded so the search can be audited.</li>
+        </ul>
+        <p>I currently apply this method on a PROSPERO-registered systematic review, with search terms verified by an academic librarian before execution.</p>
+      </section>
+
+      <!-- 10 -->
+      <section class="sec" id="s10">
+        <span class="tag">Deliverable · Critical appraisal</span>
+        <h2>Reading a study the way it will be attacked</h2>
+        <p class="purpose">Appraisal of a hypothetical prospective cohort, showing the judgements I record before a finding is allowed into a deck.</p>
+        <table>
+          <thead><tr><th>Domain</th><th>Assessment</th><th>Consequence for the content</th></tr></thead>
+          <tbody>
+            <tr><td>Design</td><td>Prospective cohort. Appropriate for incidence; cannot establish causation.</td><td>Findings phrased as association throughout. No causal verb.</td></tr>
+            <tr><td>Population</td><td>Single-centre, mixed medical-surgical ICU.</td><td>Generalisability to specialist units stated as a limitation on the slide, not in the notes.</td></tr>
+            <tr><td>Outcome definition</td><td>Composite failure endpoint combining four mechanisms.</td><td>Cannot be used to support a claim about any single mechanism. This is the most common misuse of this literature.</td></tr>
+            <tr><td>Confounding</td><td>Adjusted for age, gauge, dwell. Not adjusted for nurse-to-patient ratio.</td><td>Named explicitly. The unadjusted confounder is the first question a good audience asks.</td></tr>
+            <tr><td>Precision</td><td>Wide confidence interval around the secondary outcome.</td><td>Secondary outcome excluded from the deck. It is the most quotable number in the paper and the least supportable.</td></tr>
+            <tr><td>Reporting</td><td>Protocol registered; outcomes as pre-specified.</td><td>Raises confidence. Recorded in the reference library against the citation.</td></tr>
+          </tbody>
+        </table>
+        <div class="sample">
+          <span class="label">The judgement</span>
+          <p>Usable for incidence and for the association between insertion factors and composite failure. Not usable for mechanism-specific claims, and not usable for the secondary outcome regardless of how well it would present. A striking number from a wide confidence interval is a liability on a slide that a physician will be asked to defend.</p>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section class="sec" id="s11">
+        <span class="tag">Deliverable · Data visualisation brief</span>
+        <h2>Working with an analyst: the brief, not the request</h2>
+        <p class="purpose">What I send a data analyst so the figure that comes back is interpretable by a clinician rather than merely accurate.</p>
+        <div class="sample">
+          <span class="label">Figure brief — Figure 2, failure rate by catheter-to-vein ratio</span>
+          <p><strong>The single claim this figure must support:</strong> that failure rises as the catheter occupies more of the vein, and that the rise is not linear.</p>
+          <p><strong>Audience:</strong> intensivists and anaesthetists, viewing for under eight seconds, on a projected slide at the back of a lecture theatre.</p>
+          <p><strong>Show:</strong> ratio on x, failure proportion on y, confidence intervals. Mark the threshold where the relationship steepens.</p>
+          <p><strong>Do not show:</strong> individual study markers. Four studies plotted as four shapes will be read as four contradictions.</p>
+          <p><strong>Axis discipline:</strong> y-axis begins at zero. If the effect is only visible on a truncated axis, we do not have the effect.</p>
+          <p><strong>Colour:</strong> one hue. Any second colour must encode something. Decorative colour on a clinical figure invites the audience to look for a meaning that isn't there.</p>
+          <p><strong>What I need back:</strong> the underlying values, so I can verify the figure against source before it is reviewed. A figure I cannot check is a figure I cannot sign off.</p>
+        </div>
+        <p>The most useful thing a writer can give an analyst is the sentence the figure has to prove. Without it, the analyst optimises for completeness — and completeness is what makes clinical figures unreadable.</p>
+      </section>
+
+      <!-- 12 -->
+      <section class="sec" id="s12">
+        <span class="tag">Deliverable · Plain language</span>
+        <h2>The same evidence, for the patient it happened to</h2>
+        <p class="purpose">Register control is the writing skill that transfers least automatically. This is the same clinical content as Section 8.</p>
+        <div class="sample">
+          <span class="label">Patient-facing summary</span>
+          <p>A drip — the small tube placed in a vein in your hand or arm — is the most common procedure in hospital. It is also one that often has to be redone. The tube can become blocked, the vein can become sore or swollen, or the tube can come loose.</p>
+          <p>When this happens, treatment is paused while a new drip is placed. For someone who is seriously unwell, those pauses matter, and repeated attempts are uncomfortable.</p>
+          <p>Researchers have been looking at why this happens. It appears not to be simply bad luck. How the drip is placed, how well it is secured, and whether the tube is the right size for the vein all seem to make a difference.</p>
+          <p>What this means for you: it is reasonable to tell your nurse or doctor early if the area around your drip becomes painful, swollen or red. Catching it early is easier than replacing it late.</p>
+        </div>
+        <p>Written at a reading age appropriate for a general audience, without the two failures that characterise most plain-language writing: retaining the clinical structure while swapping the words, or simplifying so far that the reader is left with no action.</p>
+      </section>
+
+      <!-- 13 -->
+      <section class="sec" id="s13">
+        <span class="tag">Deliverable · Congress abstract &amp; poster</span>
+        <h2>Abstract discipline: 250 words that survive peer review</h2>
+        <p class="purpose">Structured abstract in congress format, and the layout logic behind the accompanying poster.</p>
+        <div class="sample">
+          <span class="label">Structured abstract — illustrative</span>
+          <p><strong>Background.</strong> Peripheral intravenous catheter failure is common in critical care, but the relative contribution of modifiable insertion factors is unclear.</p>
+          <p><strong>Methods.</strong> Systematic review of prospective studies reporting PIVC failure in adult critical care. Four databases searched from inception; two reviewers screened independently; risk of bias assessed with a validated tool. Heterogeneity precluded meta-analysis; findings synthesised narratively.</p>
+          <p><strong>Results.</strong> Reported failure rates varied substantially, driven largely by inconsistent outcome definitions. Composite failure was consistently associated with catheter-to-vein ratio and securement quality across included studies. No included study adjusted for nursing workload.</p>
+          <p><strong>Conclusions.</strong> Failure is associated with modifiable factors, but the evidence base is limited by definitional heterogeneity. Standardised outcome definitions are a prerequisite for pooled estimates. Units should measure local failure rates before selecting an intervention.</p>
+        </div>
+        <h3>Poster logic</h3>
+        <ul>
+          <li>The reader is standing, has ninety seconds, and is holding a coffee. The poster has one job: transmit the conclusion.</li>
+          <li>Conclusion sits top-right, at eye height, where the eye lands second. Not at the bottom, where posters conventionally bury it.</li>
+          <li>Methods are compressed to a single flow strip. Anyone who needs more will ask, and the presenter is standing there.</li>
+          <li>One figure, sized to be legible at two metres. Two figures means neither is read.</li>
+        </ul>
+      </section>
+
+      <!-- 14 -->
+      <section class="sec" id="s14">
+        <span class="tag">Deliverable · Medical review</span>
+        <h2>Reviewing content against standards, and the audit trail that proves it</h2>
+        <p class="purpose">The review checklist I run before content goes to medical, scientific and compliance sign-off.</p>
+        <h3>Content review checklist</h3>
+        <ul class="check">
+          <li>Every claim traced to a named source, and the source says what the claim says.</li>
+          <li>No causal language attached to observational data.</li>
+          <li>No comparative claim about a named product unless it is within approved scope and supported by head-to-head evidence.</li>
+          <li>Figures reconciled against underlying values, not against the previous version of the figure.</li>
+          <li>Limitations stated in the deck, not only in the speaker notes.</li>
+          <li>Off-label content identified and removed or flagged for the relevant approval route.</li>
+          <li>Reference list complete, formatted consistently, and every citation reachable.</li>
+          <li>Version numbered; changes since last approved version listed for the reviewer.</li>
+        </ul>
+        <div class="sample">
+          <span class="label">Audit trail principle</span>
+          <p>The purpose of the trail is not to record that review happened. It is to allow a reviewer eighteen months later to establish which evidence a specific approved claim rested on, and whether that evidence has since changed. A trail that logs approvals but not the evidence version behind them answers the wrong question.</p>
+        </div>
+      </section>
+
+      <!-- 15 -->
+      <section class="sec" id="s15">
+        <span class="tag">Deliverable · Reference library</span>
+        <h2>A library built during the work, not after it</h2>
+        <p class="purpose">Structure for a searchable clinical evidence library that the next writer can actually use.</p>
+        <table>
+          <thead><tr><th>Field</th><th>Why it exists</th></tr></thead>
+          <tbody>
+            <tr><td>Citation, DOI, full text location</td><td>Retrieval without a second search.</td></tr>
+            <tr><td>Study design, population, setting</td><td>Answers "can I use this here?" without reopening the paper.</td></tr>
+            <tr><td>Outcome definition as stated by the authors</td><td>The single most common source of error in this literature.</td></tr>
+            <tr><td>Appraisal judgement and its basis</td><td>So the next writer inherits the reasoning, not just the verdict.</td></tr>
+            <tr><td>Claims this source supports</td><td>Reverse index. Lets a reviewer move from claim to evidence in one step.</td></tr>
+            <tr><td>Claims this source is <em>not</em> sufficient for</td><td>Prevents the paper being over-cited by someone who did not read it.</td></tr>
+            <tr><td>Approved-for-market status</td><td>Keeps the compliance boundary attached to the evidence.</td></tr>
+            <tr><td>Superseded-by</td><td>The field that keeps a library from quietly going out of date.</td></tr>
+          </tbody>
+        </table>
+        <p>The last two rows are the ones usually missing. A reference library without a <code>superseded-by</code> field will, given eighteen months, confidently hand a writer a retracted paper.</p>
+      </section>
+
+      <!-- 16 -->
+      <section class="sec" id="s16">
+        <span class="tag">Record</span>
+        <h2>Publication, presentation and qualification</h2>
+        <p class="purpose">The verifiable record behind the samples above.</p>
+        <h3>Peer-reviewed publication</h3>
+        <p>Lead author, <em>Ukrainian Scientific Medical Youth Journal</em> (2020). Study design, literature review, statistical analysis and manuscript authored independently, through peer review to publication.</p>
+        <h3>Systematic review in progress</h3>
+        <p>PROSPERO-registered systematic review on return-to-play criteria following inflammatory myopericardial syndrome in athletes. Multi-database search strategy, librarian-verified terms, screening and reporting to PRISMA standards. Manchester Metropolitan University, ongoing.</p>
+        <h3>International congress presentations</h3>
+        <p>Oral, poster and abstract presentations to specialist audiences in Kyiv, Krakow and Belgrade, including prize-placed work.</p>
+        <h3>Assessed clinical teaching</h3>
+        <p>Thirty-minute assessed presentation differentiating athlete's heart from hypertrophic cardiomyopathy, structured around a clinical case. MSc cardiology module, Manchester Metropolitan University.</p>
+        <h3>Qualification</h3>
+        <p>MD (MBBS-equivalent), O.O. Bogomolets National Medical University, GMC-recognised. PLAB 1 and 2 cleared. MSc Sports and Exercise Medicine, Manchester Metropolitan University, expected September 2026. ICH-GCP E6(R3). WHO Good Practices for Clinical Trial Design.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p class="name">Dr Pulkit Mandal</p>
+    <p>Medical writer · Manchester, United Kingdom · Open to relocation and to travel across EMEA<br>
+    <a href="mailto:ubipulkit@gmail.com">ubipulkit@gmail.com</a> · +44 7377 274505 · <a href="https://linkedin.com/in/dr-pulkit-mandal-b4a585284">LinkedIn</a></p>
+    <p style="margin-top:22px;font-size:12.5px">All content on this page is original demonstration writing produced for portfolio purposes. It is not client work, describes no proprietary product, and is not affiliated with or endorsed by any manufacturer. Clinical figures are illustrative.</p>
+  </footer>
+</div>
+
+</body>
+</html>
